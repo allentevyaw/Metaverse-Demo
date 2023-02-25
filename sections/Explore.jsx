@@ -1,37 +1,39 @@
 'use client';
 
-import {motion} from 'framer-motion'
-import { useState } from 'react'; 
-import styles from '../styles'
-import { staggerContainer} from '../utils/motion'
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+import styles from '../styles';
+import { exploreWorlds } from '../constants';
+import { staggerContainer } from '../utils/motion';
 import { ExploreCard, TitleText, TypingText } from '../components';
-import {exploreWorlds} from '../constants'
 
 const Explore = () => {
-const [active, setActive] = useState('world-2')
+  const [active, setActive] = useState('world-2');
 
-  return(
-  <section
-    className={`${styles.paddings}`}
-    id='explore'>
+  return (
+    <section className={`${styles.paddings}`} id="explore">
       <motion.div
-      variants={staggerContainer}
-      initial='hidden'
-      whileInView='show'
-      viewport={{once:false, amount:0.25}}
-      className={`${styles.innerWidth} 
-      mx-auto flex flex-col`}>
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`${styles.innerWidth} mx-auto flex flex-col`}
+      >
+
         <TypingText 
         title='| The World'
-        textStyles='text-center'/>
+        textStyles='text-center'
+        />
 
-        <TitleText 
-          title={<>Choose the world you want
-        <br className='md:block hidden'/> to explore</>}
-            textStyles='text-center'/>
-            <div className='mt-[50px] flex lg:flex-row flex-col min-h-[7-vh] gap-5'>
+<TitleText
+          title={<>Choose the world you want <br className="md:block hidden" /> to explore</>}
+          textStyles="text-center"
+        />
+            <div className='mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5'>
               {exploreWorlds.map((world, index) => (
-                <ExploreCard 
+                
+                <ExploreCard
                 key={world.id}
                 {...world}
                 index={index}
