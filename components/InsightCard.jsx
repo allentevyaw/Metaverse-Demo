@@ -27,7 +27,6 @@ const InsightCard = ({imgUrl, title, subtitle, index}) => (
     alt="arrow"
     className="w-[40%] h-[40%] object-contain" />
   </div>
-
 </div>
 
   </motion.div>
